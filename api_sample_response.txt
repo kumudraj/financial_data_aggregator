@@ -1,0 +1,52 @@
+### GET /assets
+{
+  "assets": [
+    {"symbol": "BTC-USD", "latest_price": 94744.31, "change_percent_24h": 0.02, "average_price_7d": 91891.83, "last_updated": "2025-04-26T12:30:47"},
+    {"symbol": "TSLA", "latest_price": 284.95, "change_percent_24h": 9.80, "average_price_7d": 249.08, "last_updated": "2025-04-26T12:30:47"}
+  ]
+}
+
+### POST /assets
+{
+  "assets": [
+    {"symbol": "BTC-USD", "latest_price": 94744.31, "change_percent_24h": 0.02, "average_price_7d": 91891.83, "last_updated": "2025-04-26T12:30:47"}
+  ]
+}
+
+### GET /metrics/{symbol}
+{
+  "symbol": "BTC-USD",
+  "latest_price": 94744.31,
+  "change_percent_24h": 0.02,
+  "average_price_7d": 91891.83,
+  "last_updated": "2025-04-26T12:30:47"
+}
+
+### GET /assets/{symbol}/history
+{
+  "history": [
+    {"symbol": "BTC-USD", "timestamp": "2025-04-26T12:30:47", "metadata": {"latest_price": 94744.31, "change_percent_24h": 0.02, "average_price_7d": 91891.83}}
+  ]
+}
+
+### GET /compare
+{
+  "asset1": {"symbol": "BTC-USD", "latest_price": 94744.31, "change_percent_24h": 0.02, "average_price_7d": 91891.83},
+  "asset2": {"symbol": "TSLA", "latest_price": 284.95, "change_percent_24h": 9.80, "average_price_7d": 249.08},
+  "price_difference": 94459.36,
+  "performance_difference_24h": -9.78
+}
+
+### GET /summary
+{
+  "summary": "The market shows mixed trends today. BTC-USD has slightly increased by 0.02% in the last 24 hours, maintaining an average price of approximately $91,890 over the past week. TSLA has seen significant growth, rising by 9.80% with an average weekly price around $249.08."
+}
+
+### POST /ingest
+{
+  "message": "Processed 2 symbols",
+  "updated_count": 2,
+  "success_messages": ["Updated BTC-USD", "Updated TSLA"],
+  "error_messages": [],
+  "updated_assets": ["BTC-USD", "TSLA"]
+}
